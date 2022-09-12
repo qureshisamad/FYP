@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "805205457634",
+    "project_id": "robotic-flash-347411",
+    "storage_bucket": "robotic-flash-347411.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805205457634:android:1e827fb425f0799a5efcbb",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805205457634-uuqm9djf1ncuku9sn2tv8mskkjl4d0lf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFyTPgQmx9VRKre2NDK72_Ui_g-RUFvHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805205457634-uuqm9djf1ncuku9sn2tv8mskkjl4d0lf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
