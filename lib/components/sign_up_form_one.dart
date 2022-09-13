@@ -242,11 +242,13 @@ class _signUpScreenOne extends State<SignUpScreenOne> {
                                 });
                               },
                             ),
-                            RaisedButton(
-                              splashColor: Colors.yellow,
-                              color: Colors.red,
-                              padding: EdgeInsets.all(12.0),
-                              shape: StadiumBorder(),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                onPrimary: Colors.black87,
+                                primary: Colors.grey[300],
+                                padding: EdgeInsets.all(12.0),
+                                shape: StadiumBorder(),
+                              ),
                               onPressed: () {
                                 BottomPicker.date(
                                         title: "Set Your Birthday",

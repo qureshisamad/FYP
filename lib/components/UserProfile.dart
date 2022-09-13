@@ -318,11 +318,12 @@ class _UserProfile extends State<UserProfile> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              RaisedButton(
-                                splashColor: Colors.yellow,
-                                color: Colors.red,
-                                // padding: EdgeInsets.all(12.0),
-                                shape: StadiumBorder(),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  onPrimary: Colors.black87,
+                                  primary: Colors.grey[300],
+                                  shape: StadiumBorder(),
+                                ),
                                 onPressed: () async {
                                   SharedPreferences preferences =
                                       await SharedPreferences.getInstance();
@@ -342,11 +343,12 @@ class _UserProfile extends State<UserProfile> {
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ),
-                              RaisedButton(
-                                splashColor: Colors.yellow,
-                                color: Colors.red,
-                                // padding: EdgeInsets.all(12.0),
-                                shape: StadiumBorder(),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  onPrimary: Colors.black87,
+                                  primary: Colors.grey[300],
+                                  shape: StadiumBorder(),
+                                ),
                                 onPressed: () async {
                                   SharedPreferences preferences =
                                       await SharedPreferences.getInstance();
@@ -399,10 +401,14 @@ class _UserProfile extends State<UserProfile> {
             child: Padding(
               padding: EdgeInsets.only(right: 10.0),
               child: Container(
-                  child: new RaisedButton(
+                  child: new ElevatedButton(
                 child: new Text("Save"),
-                textColor: Colors.white,
-                color: Colors.green,
+                style: ElevatedButton.styleFrom(
+                  onPrimary: Colors.black87,
+                  primary: Colors.grey[300],
+                  padding: EdgeInsets.all(12.0),
+                  shape: StadiumBorder(),
+                ),
                 onPressed: () async {
                   var data = {
                     "_id": widget.currentUser["_id"],
@@ -421,8 +427,8 @@ class _UserProfile extends State<UserProfile> {
                     });
                   }
                 },
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0)),
+                // shape: new RoundedRectangleBorder(
+                //     borderRadius: new BorderRadius.circular(20.0)),
               )),
             ),
             flex: 2,
@@ -431,18 +437,22 @@ class _UserProfile extends State<UserProfile> {
             child: Padding(
               padding: EdgeInsets.only(left: 10.0),
               child: Container(
-                  child: new RaisedButton(
+                  child: new ElevatedButton(
                 child: new Text("Cancel"),
-                textColor: Colors.white,
-                color: Colors.red,
+                style: ElevatedButton.styleFrom(
+                  onPrimary: Colors.black87,
+                  primary: Colors.grey[300],
+                  padding: EdgeInsets.all(12.0),
+                  shape: StadiumBorder(),
+                ),
                 onPressed: () {
                   setState(() {
                     _status = true;
                     FocusScope.of(context).requestFocus(new FocusNode());
                   });
                 },
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0)),
+                // shape: new RoundedRectangleBorder(
+                //     borderRadius: new BorderRadius.circular(20.0)),
               )),
             ),
             flex: 2,
@@ -472,83 +482,83 @@ class _UserProfile extends State<UserProfile> {
   }
 }
 
-class BottomShhetWidget extends StatefulWidget {
-  @override
-  _BottomShhetWidgetState createState() => _BottomShhetWidgetState();
-}
+// class BottomShhetWidget extends StatefulWidget {
+//   @override
+//   _BottomShhetWidgetState createState() => _BottomShhetWidgetState();
+// }
 
-class _BottomShhetWidgetState extends State<BottomShhetWidget> {
-  final picker = ImagePicker();
-  void takePhotoByCamera() async {
-    final image = await picker.pickImage(source: ImageSource.camera);
+// class _BottomShhetWidgetState extends State<BottomShhetWidget> {
+//   final picker = ImagePicker();
+//   void takePhotoByCamera() async {
+//     final image = await picker.pickImage(source: ImageSource.camera);
 
-    setState(() {
-      imageFile = image;
-    });
-  }
+//     setState(() {
+//       imageFile = image;
+//     });
+//   }
 
-  void takePhotoByGallery() async {
-    final image = await picker.pickImage(source: ImageSource.gallery);
+//   void takePhotoByGallery() async {
+//     final image = await picker.pickImage(source: ImageSource.gallery);
 
-    setState(() {
-      imageFile = image;
-    });
-  }
+//     setState(() {
+//       imageFile = image;
+//     });
+//   }
 
-  void removePhoto() {
-    setState(() {
-      imageFile = null;
-    });
-  }
+//   void removePhoto() {
+//     setState(() {
+//       imageFile = null;
+//     });
+//   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 250.0,
-      width: 250.0,
-      margin: EdgeInsets.only(left: 30.0, top: 25.0),
-      child: Column(
-        children: <Widget>[
-          Text(
-            "Profile photo",
-            style: TextStyle(
-              fontSize: 20.0,
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(right: 20.0, top: 20.0),
-            child: Row(
-              children: <Widget>[
-                FlatButton.icon(
-                  icon: Icon(Icons.camera),
-                  onPressed: takePhotoByCamera,
-                  label: Text("Camera"),
-                ),
-                Container(
-                  margin: EdgeInsets.only(right: 20.0),
-                ),
-                FlatButton.icon(
-                  icon: Icon(Icons.image),
-                  onPressed: takePhotoByGallery,
-                  label: Text("Gallery"),
-                ),
-              ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(right: 40.0, top: 10.0),
-            child: Row(
-              children: <Widget>[
-                FlatButton.icon(
-                  icon: Icon(Icons.delete),
-                  onPressed: removePhoto,
-                  label: Text("Remove"),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+  // @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 250.0,
+//       width: 250.0,
+//       margin: EdgeInsets.only(left: 30.0, top: 25.0),
+//       child: Column(
+//         children: <Widget>[
+//           Text(
+//             "Profile photo",
+//             style: TextStyle(
+//               fontSize: 20.0,
+//             ),
+//           ),
+//           Container(
+//             margin: EdgeInsets.only(right: 20.0, top: 20.0),
+//             child: Row(
+//               children: <Widget>[
+//                 FlatButton.icon(
+//                   icon: Icon(Icons.camera),
+//                   onPressed: takePhotoByCamera,
+//                   label: Text("Camera"),
+//                 ),
+//                 Container(
+//                   margin: EdgeInsets.only(right: 20.0),
+//                 ),
+//                 FlatButton.icon(
+//                   icon: Icon(Icons.image),
+//                   onPressed: takePhotoByGallery,
+//                   label: Text("Gallery"),
+//                 ),
+//               ],
+//             ),
+//           ),
+//           Container(
+//             margin: EdgeInsets.only(right: 40.0, top: 10.0),
+//             child: Row(
+//               children: <Widget>[
+//                 FlatButton.icon(
+//                   icon: Icon(Icons.delete),
+//                   onPressed: removePhoto,
+//                   label: Text("Remove"),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }

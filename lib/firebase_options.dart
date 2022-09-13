@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -46,20 +49,12 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAZqvFikvw62diech-7APCnAaHLD7uGYLI',
-    appId: '1:805205457634:web:128e8077140a47bd5efcbb',
-    messagingSenderId: '805205457634',
-    projectId: 'robotic-flash-347411',
-    authDomain: 'robotic-flash-347411.firebaseapp.com',
-    storageBucket: 'robotic-flash-347411.appspot.com',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDFyTPgQmx9VRKre2NDK72_Ui_g-RUFvHI',
     appId: '1:805205457634:android:1e827fb425f0799a5efcbb',
     messagingSenderId: '805205457634',
     projectId: 'robotic-flash-347411',
+    databaseURL: 'https://robotic-flash-347411-default-rtdb.firebaseio.com',
     storageBucket: 'robotic-flash-347411.appspot.com',
   );
 
@@ -68,6 +63,7 @@ class DefaultFirebaseOptions {
     appId: '1:805205457634:ios:1d88b2c6a683e1475efcbb',
     messagingSenderId: '805205457634',
     projectId: 'robotic-flash-347411',
+    databaseURL: 'https://robotic-flash-347411-default-rtdb.firebaseio.com',
     storageBucket: 'robotic-flash-347411.appspot.com',
     iosClientId: '805205457634-hh8pnvveacpsuo65d9kj3lj20bpsiq8o.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterApplication1',

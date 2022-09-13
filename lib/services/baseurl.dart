@@ -1,3 +1,3 @@
 class baseurl {
-  static const url = 'http://10.102.160.194:3000';
+  static const url = 'http://10.0.0.53:3000';
 }

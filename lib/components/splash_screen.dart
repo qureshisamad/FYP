@@ -22,6 +22,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
+    _navigateToNext();
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
@@ -43,7 +44,6 @@ class _SplashState extends State<Splash> {
               ),
             ));
       }
-      _navigateToNext();
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {

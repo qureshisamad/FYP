@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "805205457634",
+    "firebase_url": "https://robotic-flash-347411-default-rtdb.firebaseio.com",
     "project_id": "robotic-flash-347411",
     "storage_bucket": "robotic-flash-347411.appspot.com"
   },
@@ -29,6 +30,13 @@
             {
               "client_id": "805205457634-uuqm9djf1ncuku9sn2tv8mskkjl4d0lf.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "805205457634-hh8pnvveacpsuo65d9kj3lj20bpsiq8o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterApplication1"
+              }
             }
           ]
         }

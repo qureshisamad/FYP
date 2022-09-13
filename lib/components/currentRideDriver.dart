@@ -654,15 +654,19 @@ class _CurrentRideDriver extends State<CurrentRideDriver> {
                                                       child: Container(
                                                         width: 100.0,
                                                         height: 40.0,
-                                                        child: RaisedButton(
-                                                          splashColor:
-                                                              Colors.yellow,
-                                                          color: Colors.red,
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  12.0),
-                                                          shape:
-                                                              StadiumBorder(),
+                                                        child: ElevatedButton(
+                                                          style: ElevatedButton
+                                                              .styleFrom(
+                                                            onPrimary:
+                                                                Colors.black87,
+                                                            primary: Colors
+                                                                .grey[300],
+                                                            padding:
+                                                                EdgeInsets.all(
+                                                                    12.0),
+                                                            shape:
+                                                                StadiumBorder(),
+                                                          ),
                                                           onPressed: () async {
                                                             widget.rideData[
                                                                     "ride_status"] =
