@@ -22,7 +22,9 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
+    print("befor3");
     _navigateToNext();
+    print("fter");
 
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
@@ -73,6 +75,7 @@ class _SplashState extends State<Splash> {
   var JsonData;
 
   _navigateToNext() async {
+    print("here");
     setState(() {
       isLoading = true;
     });

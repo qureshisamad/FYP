@@ -80,7 +80,6 @@ class _CurrentRideDriver extends State<CurrentRideDriver> {
     _getCurrentLocation();
     setCustomMarkerIcon();
     driverUnavailable();
-    setAddress();
   }
 
   Future<void> driverUnavailable() async {
@@ -91,8 +90,13 @@ class _CurrentRideDriver extends State<CurrentRideDriver> {
     var response = await AppDatabase().postData("driverUnavailable", data);
   }
 
-  void setAddress() async {
+  setAddress() async {
     try {
+      print("In SET");
+      print("In SET");
+      print("In SET");
+      print("In SET");
+      print("In SET");
       List<Placemark> source = await placemarkFromCoordinates(
           _currentPosition.latitude, _currentPosition.longitude);
       List<Placemark> dest = await placemarkFromCoordinates(
@@ -100,13 +104,15 @@ class _CurrentRideDriver extends State<CurrentRideDriver> {
           widget.rideData["user_destination_lon"]);
 
       Placemark placeSource = source[0];
-      Placemark placeDest = source[0];
+      Placemark placeDest = dest[0];
+      print(placeSource);
+      print(placeDest);
 
       setState(() {
-        _source =
-            "${placeSource.name}, ${placeSource.locality}, ${placeSource.postalCode}, ${placeSource.country}";
-        _destination =
-            "${placeDest.name}, ${placeDest.locality}, ${placeDest.postalCode}, ${placeDest.country}";
+        _source = "${placeSource.name}";
+        _destination = "${placeDest.name}";
+        print(_source);
+        print(_destination);
       });
     } catch (e) {
       print(e);
@@ -134,6 +140,7 @@ class _CurrentRideDriver extends State<CurrentRideDriver> {
         );
       });
       await _getAddress();
+      await setAddress();
       final LocationSettings locationSettings = LocationSettings(
         accuracy: LocationAccuracy.high,
         distanceFilter: 100,

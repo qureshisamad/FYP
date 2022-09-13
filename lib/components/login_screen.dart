@@ -176,8 +176,8 @@ class _State extends State<LoginScreen> {
                           height: 40.0,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              onPrimary: Colors.black87,
-                              primary: Colors.grey[300],
+                              foregroundColor: Colors.black87,
+                              backgroundColor: Colors.red,
                               padding: EdgeInsets.all(12.0),
                               shape: StadiumBorder(),
                             ),
@@ -194,72 +194,6 @@ class _State extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20.0),
-                        child: Container(
-                          width: 100.0,
-                          height: 40.0,
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              onPrimary: Colors.black87,
-                              primary: Colors.grey[300],
-                              padding: EdgeInsets.all(12.0),
-                              shape: StadiumBorder(),
-                            ),
-                            onPressed: () {
-                              showDialog(
-                                  barrierDismissible: false,
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return Dialog(
-                                        backgroundColor: Colors.transparent,
-                                        insetPadding: EdgeInsets.all(10),
-                                        child: Container(
-                                          // width: 200,
-                                          height: 200,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(15),
-                                              color: Colors.white),
-                                          padding: EdgeInsets.all(10.0),
-                                          child: Column(children: <Widget>[
-                                            Text("FINISH RIDE",
-                                                style: TextStyle(fontSize: 24),
-                                                textAlign: TextAlign.center),
-                                          ]),
-                                        ));
-                                  });
-                              // showDialog(
-                              //     context: context,
-                              //     builder: (BuildContext context) {
-                              //       return AlertDialog(
-                              //         title: Text(
-                              //           "FINISH RIDE",
-                              //           textAlign: TextAlign.center,
-                              //         ),
-                              //         content: Column(
-                              //           children: <Widget>[
-                              //             InkResponse(
-                              //               onTap: () {
-                              //                 Navigator.of(context).pop();
-                              //               },
-                              //               child: CircleAvatar(
-                              //                 child: Icon(Icons.close),
-                              //                 backgroundColor: Colors.red,
-                              //               ),
-                              //             ),
-                              //           ],
-                              //         ),
-                              //       );
-                              //     });
-                            },
-                            child: Text(
-                              'TEST',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 ),
@@ -271,8 +205,8 @@ class _State extends State<LoginScreen> {
                     height: 40.0,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        onPrimary: Colors.black87,
-                        primary: Colors.grey[300],
+                        foregroundColor: Colors.black87,
+                        backgroundColor: Colors.red,
                         padding: EdgeInsets.all(12.0),
                         shape: StadiumBorder(),
                       ),
@@ -303,10 +237,8 @@ class _State extends State<LoginScreen> {
                                   'token', JsonData['token'].toString());
                               await prefs.setString('userData', user);
                               userCurrent = new currentUserData(currentUser);
+                              print(currentUser);
 
-                              setState(() {
-                                isLoading = false;
-                              });
                               await _getDeviceToken();
                               context.loaderOverlay.hide();
 
